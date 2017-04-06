@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATHS = {
@@ -17,6 +18,21 @@ const commonConfig = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Webpack demo',
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        eslint: {
+          failOnWarning: false,
+          failOnError: true,
+
+          fix: false,
+
+          outputReport: {
+            filePath: 'checkstyle.xml',
+            formatter: require('eslint/lib/formatters/checkstyle'),
+          },
+        },
+      },
     }),
   ],
 }
