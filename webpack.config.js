@@ -36,7 +36,7 @@ const developmentConfig = () => {
 
       host: process.env.HOST,
       port: process.env.PORT,
-    }
+    },
   }
 
   return Object.assign(
