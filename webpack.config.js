@@ -37,6 +37,20 @@ const developmentConfig = () => {
       host: process.env.HOST,
       port: process.env.PORT,
     },
+
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          enforce: 'pre',
+
+          loader: 'eslint-loader',
+          options: {
+            emitWarning: true,
+          },
+        },
+      ],
+    },
   }
 
   return Object.assign(
