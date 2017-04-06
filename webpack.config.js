@@ -36,6 +36,11 @@ const developmentConfig = () => {
 
       host: process.env.HOST,
       port: process.env.PORT,
+
+      overlay: {
+        errors: true,
+        warnings: true,
+      },
     },
 
     module: {
