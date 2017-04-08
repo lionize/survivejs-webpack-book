@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
     "build": "webpack --env production",
-    "lint:js": "eslint app/ webpack.*.js --cache"
+    "lint:js": "eslint app/ webpack.*.js --cache",
+    "lint:style": "stylelint app/**/*.css"
   },
   "browserslist": {
     "production": [
