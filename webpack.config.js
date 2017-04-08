@@ -1,18 +1,21 @@
 const path = require('path')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const glob = require('glob')
 
 const parts = require('./webpack.parts')
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build'),
+  style: glob.sync('./app/**/*.css'),
 }
 
 const commonConfig = merge([
   {
     entry: {
       app: PATHS.app,
+      style: PATHS.style,
     },
     output: {
       path: PATHS.build,
