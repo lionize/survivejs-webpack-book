@@ -39,6 +39,7 @@ const productionConfig = merge([
           modules: true,
         },
       },
+      parts.autoprefix(),
     ],
   }),
 ])
