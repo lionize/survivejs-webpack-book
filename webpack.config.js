@@ -36,10 +36,10 @@ const commonConfig = merge([
 
 const productionConfig = merge([
   parts.extractCSS({
+    exclude: /node_modules/,
     use: [
       {
         loader: 'css-loader',
-        exclude: /node_modules/,
         options: {
           modules: true,
         },
