@@ -151,3 +151,20 @@ exports.loadFonts = ({ include, exclude, options } = {}) => ({
     ],
   },
 })
+
+exports.loadJavascript = ({ include, exclude }) => ({
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include,
+        exclude,
+
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true,
+        },
+      },
+    ],
+  },
+})
