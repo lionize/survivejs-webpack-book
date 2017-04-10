@@ -65,6 +65,10 @@ exports.extractCSS = ({ include, exclude, use }) => {
     module: {
       rules: [
         {
+          test: /node_modules.+\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
+        {
           test: /\.css$/,
           include,
           exclude,
