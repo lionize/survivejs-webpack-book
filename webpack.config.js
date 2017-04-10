@@ -58,7 +58,7 @@ const developmentConfig = merge([
     host: process.env.HOST,
     port: process.env.PORT,
   }),
-  parts.loadCSS(),
+  parts.loadCSS({ exclude: /node_modules/ }),
   parts.loadImages(),
 ])
 

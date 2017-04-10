@@ -1,10 +1,10 @@
-import purecss from 'purecss'
+import 'purecss'
 
 export default (text = 'Hello world') => {
   const element = document.createElement('div')
 
   element.innerHTML = text
-  element.className = purecss['pure-button']
+  element.className = 'pure-button'
 
   return element
 }

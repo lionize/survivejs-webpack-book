@@ -34,6 +34,10 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
   module: {
     rules: [
       {
+        test: /node_modules.+\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.css$/,
         include,
         exclude,
